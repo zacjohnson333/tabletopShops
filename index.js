@@ -24,11 +24,11 @@ app.get('/', (req, res) => {
     res.render('home')
 });
 
-app.get('/makeshop', async (req, res) => {
-    const shop = new Shop({ name: 'Corner Store', location: 'New Berlin' });
-    await shop.save();
-    res.send(shop);
+app.get('/shops', async (req, res) => {
+    const shops = await Shop.find({});
+    res.render('shops/index', { shops });
 });
+
 
 app.listen(3000, () => {
     console.log('Serving on port 3000')
