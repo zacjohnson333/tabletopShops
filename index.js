@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
+const methodOverride = require('method-override');
 const Shop = require('./models/shop');
 
 // no longer need to use userUnifiedToplogy, etc.
@@ -20,6 +21,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride('_method'));
 
 
 app.get('/', (req, res) => {
@@ -44,6 +46,17 @@ app.post('/shops', async (req, res) => {
 app.get('/shops/:id', async (req, res) => {
     const shop = await Shop.findById(req.params.id);
     res.render('shops/show', { shop });
+});
+
+app.get('/shops/:id/edit', async (req, res) => {
+    const shop = await Shop.findById(req.params.id);
+    res.render('shops/edit', { shop });
+});
+
+app.put('/shops/:id', async (req, res) => {
+    const { id } = req.params;
+    const shop = await Shop.findByIdAndUpdate(id, { ...req.body.shop });
+    res.redirect(`/shops/${shop._id}`);
 });
 
 
