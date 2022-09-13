@@ -59,6 +59,12 @@ app.put('/shops/:id', async (req, res) => {
     res.redirect(`/shops/${shop._id}`);
 });
 
+app.delete('/shops/:id', async (req, res) => {
+    const { id } = req.params;
+    await Shop.findByIdAndDelete(id);
+    res.redirect('/shops');
+});
+
 
 
 
