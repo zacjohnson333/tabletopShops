@@ -1,0 +1,165 @@
+// To be imported into style.scss
+
+// Navigation Variables
+
+$nav-height: 80px; // tutorial had 70px, shouldn't matter
+$nav-background: #283044;
+$nav-font-color: #78A1BB;
+$nav-link-hover-color: #78A1BB;
+$nav-font-hover-color: #283044;
+$content-width: 100%;
+$breakpoint: 799px; //for smaller screen use?
+
+
+.navigation {
+    height: $nav-height;
+    background: $nav-background;
+}
+
+.brand {
+    position: absolute;
+    padding-left: 20px;
+    float: left;
+    line-height: $nav-height;
+    font-size: 2.5rem;
+    font-family: 'Eagle Lake', cursive;
+
+    a,
+    a:visited {
+        color: $nav-font-color;
+        text-decoration: none;
+    }
+}
+
+.nav-container {
+    max-width: $content-width;
+    margin: 0 auto;
+}
+
+nav {
+    float: right;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            float: left;
+            position: relative;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 800;
+
+            a,
+            a:visited {
+                display: block;
+                padding: 0 20px;
+                line-height: $nav-height;
+                background: $nav-background;
+                color: $nav-font-color;
+                text-decoration: none;
+                transition: background 0.2s ease;
+
+
+                &:hover {
+                    background: $nav-link-hover-color;
+                    color: $nav-font-hover-color;
+                }
+            }
+        }
+    }
+}
+
+.nav-mobile {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: $nav-background;
+    height: $nav-height;
+    width: $nav-height;
+}
+
+@media only screen and (max-width: 798px) {
+
+    // Hamburger nav visible on mobile only
+    .nav-mobile {
+        display: block;
+    }
+
+    nav {
+        width: 100%;
+        padding: $nav-height 0 15px;
+
+        ul {
+            display: none;
+
+            li {
+                float: none;
+
+                a {
+                    padding: 15px;
+                    line-height: 20px;
+                }
+
+                ul li a {
+                    padding-left: 30px;
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (min-width: $breakpoint) {
+    .nav-list {
+        display: block !important;
+    }
+}
+
+#nav-toggle {
+    position: absolute;
+    left: 18px;
+    top: 22px;
+    cursor: pointer;
+    padding: 10px 35px 16px 0px;
+
+    span,
+    span:before,
+    span:after {
+        cursor: pointer;
+        border-radius: 1px;
+        height: 5px;
+        width: 35px;
+        background: $nav-font-color;
+        position: absolute;
+        display: block;
+        content: '';
+        transition: all 300ms ease-in-out;
+    }
+
+    span:before {
+        top: -10px;
+    }
+
+    span:after {
+        bottom: -10px;
+    }
+
+    &.active span {
+        background-color: transparent;
+
+        &:before,
+        &:after {
+            top: 0;
+        }
+
+        &:before {
+            transform: rotate(45deg);
+        }
+
+        &:after {
+            transform: rotate(-45deg);
+        }
+    }
+}

@@ -7,12 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BOILERPLATE</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/navbar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Eagle+Lake&family=Raleway:ital,wght@0,400;0,800;1,400;1,800&display=swap"
+        rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="/javascripts/navbar.js" type="module"></script>
 </head>
 
 <body>
-    <main>
-        <%- body %>
-    </main>
+    <%- include('../partials/navbar') %>
+        <main>
+            <%- body %>
+        </main>
 </body>
 
 </html>

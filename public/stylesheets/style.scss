@@ -1,3 +1,5 @@
+$body: #EBF5EE;
+
 body,
 html {
     margin: 0;
@@ -6,6 +8,12 @@ html {
 
 body {
     min-height: 100vh;
-    margin-left: 5rem; // might remove when styling index page
-    margin-right: 5rem; // might remove when styling index page
+    background: $body;
+
+
+    main {
+        margin-left: 5rem; // might remove when styling index page
+        margin-right: 5rem; // might remove when styling index page
+    }
+
 }

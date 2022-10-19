@@ -6,6 +6,9 @@ html {
 
 body {
   min-height: 100vh;
+  background: #EBF5EE;
+}
+body main {
   margin-left: 5rem;
   margin-right: 5rem;
 }/*# sourceMappingURL=style.css.map */
