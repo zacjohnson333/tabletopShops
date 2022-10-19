@@ -1,0 +1,26 @@
+.footer {
+  height: 80px;
+  background: #283044;
+  max-width: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Raleway", sans-serif;
+}
+.footer #footer-container {
+  color: #78A1BB;
+  text-align: center;
+}
+.footer #footer-container a {
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.footer #footer-container a:visited {
+  color: #78A1BB;
+}
+.footer #footer-container a:hover {
+  color: #EBF5EE;
+}/*# sourceMappingURL=footer.css.map */

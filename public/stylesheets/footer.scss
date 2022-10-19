@@ -1,0 +1,35 @@
+// Footer variables
+$footer-height: 80px;
+$footer-background: #283044;
+$footer-font-color: #78A1BB;
+$footer-link-hover-color: #EBF5EE;
+
+.footer {
+    height: $footer-height;
+    background: $footer-background;
+    max-width: 100%;
+    position: sticky;
+    top: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+
+    #footer-container {
+        color: $footer-font-color;
+        text-align: center;
+
+        a {
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        a:visited {
+            color: $footer-font-color;
+        }
+
+        a:hover {
+            color: $footer-link-hover-color;
+        }
+    }
+}
