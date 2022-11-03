@@ -21,7 +21,10 @@ const seedDB = async () => {
         const random1000 = Math.floor(Math.random() * 1000);
         const shop = new Shop({
             location: `${cities[random1000].city}, ${cities[random1000].state}`,
-            name: `${sample(descriptors)} ${sample(places)}`
+            name: `${sample(descriptors)} ${sample(places)}`,
+            image: 'https://source.unsplash.com/collection/4959235',
+            description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut tenetur sapiente dolor molestias modi ex numquam culpa hic autem! Eius dolores deleniti quis accusantium asperiores repellendus illum, sapiente facilis expedita!',
+            phone: '555-555-5555'
         });
         await shop.save();
     }
