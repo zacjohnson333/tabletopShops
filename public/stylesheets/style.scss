@@ -1,4 +1,11 @@
 $body: #EBF5EE;
+$text: #283044;
+$font1: 'Raleway', sans-serif;
+$font2: 'Eagle Lake', cursive;
+$btn: #283044;
+$btnText: #78A1BB;
+$btnTextHov: #EBF5EE;
+$details: #78A1BB;
 
 body,
 html {
@@ -16,4 +23,104 @@ body {
         margin-right: 5rem; // might remove when styling index page
     }
 
+}
+
+h1 {
+    text-align: center;
+    color: $text;
+    font-family: $font1;
+    font-weight: 800;
+    font-size: 2.5rem;
+    padding-top: 2rem;
+}
+
+#newShopBtn {
+    text-align: center;
+    font-family: $font1;
+    font-style: italic;
+    padding-bottom: 2rem;
+
+    a,
+    a:visited {
+        background-color: $btn;
+        color: $btnText;
+        text-decoration: none;
+        padding: 1rem;
+        border-radius: 8px;
+        transition: all 0.2s ease;
+        display: inline-block;
+
+        &:hover {
+            color: $btnTextHov;
+            transform: translateY(-3px);
+        }
+    }
+}
+
+ul {
+    list-style: none;
+
+    .shopContainer {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        padding-bottom: 1.5rem;
+
+        .imgContainer {
+            grid-column: 2/3;
+            grid-row: 1/2;
+            background-size: cover;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+
+            // Solution: I had to include use 'background-img' vs img tag
+        }
+
+        .detailsContainer {
+            grid-column: 3/4;
+            max-width: 1fr;
+            background: $details;
+            align-items: center;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 1fr 1fr 2fr;
+            font-family: $font1;
+            padding-left: 2rem;
+            color: $text;
+
+            .shopName {
+                grid-column: 1/4;
+                grid-row: 1/2;
+                font-family: $font2;
+                font-size: 115%;
+            }
+
+            .shopLocation {
+                grid-column: 1/4;
+                grid-row: 2/3;
+            }
+
+            .viewShop,
+            .viewShop:visited {
+                grid-column: 1/4;
+                grid-row: 3/4;
+                // text-align: center;
+                background: $btn;
+                color: $btnText;
+                text-decoration: none;
+                padding: 0.5rem;
+                border-radius: 8px;
+                transition: all 0.2s ease;
+                display: inline-block;
+                margin-right: 2rem;
+
+                &:hover {
+                    color: $btnTextHov;
+                    transform: translateY(-3px);
+                }
+            }
+        }
+    }
 }

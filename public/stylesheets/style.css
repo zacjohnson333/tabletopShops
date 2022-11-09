@@ -11,4 +11,94 @@ body {
 body main {
   margin-left: 5rem;
   margin-right: 5rem;
+}
+
+h1 {
+  text-align: center;
+  color: #283044;
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  font-size: 2.5rem;
+  padding-top: 2rem;
+}
+
+#newShopBtn {
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-style: italic;
+  padding-bottom: 2rem;
+}
+#newShopBtn a,
+#newShopBtn a:visited {
+  background-color: #283044;
+  color: #78A1BB;
+  text-decoration: none;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+#newShopBtn a:hover,
+#newShopBtn a:visited:hover {
+  color: #EBF5EE;
+  transform: translateY(-3px);
+}
+
+ul {
+  list-style: none;
+}
+ul .shopContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  padding-bottom: 1.5rem;
+}
+ul .shopContainer .imgContainer {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  background-size: cover;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+ul .shopContainer .detailsContainer {
+  grid-column: 3/4;
+  max-width: 1fr;
+  background: #78A1BB;
+  align-items: center;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr 2fr;
+  font-family: "Raleway", sans-serif;
+  padding-left: 2rem;
+  color: #283044;
+}
+ul .shopContainer .detailsContainer .shopName {
+  grid-column: 1/4;
+  grid-row: 1/2;
+  font-family: "Eagle Lake", cursive;
+  font-size: 115%;
+}
+ul .shopContainer .detailsContainer .shopLocation {
+  grid-column: 1/4;
+  grid-row: 2/3;
+}
+ul .shopContainer .detailsContainer .viewShop,
+ul .shopContainer .detailsContainer .viewShop:visited {
+  grid-column: 1/4;
+  grid-row: 3/4;
+  background: #283044;
+  color: #78A1BB;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  display: inline-block;
+  margin-right: 2rem;
+}
+ul .shopContainer .detailsContainer .viewShop:hover,
+ul .shopContainer .detailsContainer .viewShop:visited:hover {
+  color: #EBF5EE;
+  transform: translateY(-3px);
 }/*# sourceMappingURL=style.css.map */
