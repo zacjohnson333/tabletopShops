@@ -369,3 +369,25 @@ textarea {
         color: $good
     }
 }
+
+.backBtn {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: $font;
+
+    a,
+    a:visited {
+        background: $btn;
+        padding: 1rem;
+        border-radius: 8px;
+        text-decoration: none;
+        color: $btnText;
+        transition: all 0.2s ease;
+        display: inline-block;
+
+        &:hover {
+            color: $btnTextHov;
+            transform: translateY(-3px);
+        }
+    }
+}

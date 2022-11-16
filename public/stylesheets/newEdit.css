@@ -313,4 +313,25 @@ textarea {
 .formControl.success small {
   visibility: visible;
   color: #2ecc71;
+}
+
+.backBtn {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: "Raleway", sans-serif;
+}
+.backBtn a,
+.backBtn a:visited {
+  background: #283044;
+  padding: 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #78A1BB;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+.backBtn a:hover,
+.backBtn a:visited:hover {
+  color: #EBF5EE;
+  transform: translateY(-3px);
 }/*# sourceMappingURL=newEdit.css.map */

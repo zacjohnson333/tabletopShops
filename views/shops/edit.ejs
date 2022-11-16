@@ -1,14 +1,101 @@
 <% layout('layouts/boilerplate') %>
     <h1>Edit Shop</h1>
-    <form action="/shops/<%= shop._id %>?_method=PUT" method="POST">
-        <div>
-            <label for="name">Shop Name</label>
-            <input type="text" id="name" name="shop[name]" value="<%= shop.name %> ">
-        </div>
-        <div>
-            <label for="location">Location</label>
-            <input type="text" id="location" name="shop[location]" value="<%= shop.location %> ">
-        </div>
-        <button>Update Shop</button>
-    </form>
-    <a href="/shops/<%= shop._id %>">Back to Shop</a>
+    <section class="formContainer">
+        <form action="/shops/<%= shop._id %>?_method=PUT" method="POST" class="newEditContainer" id="form">
+            <!-- FROM OG: This is not allowing anything to post, because its for files? enctype="multipart/form-data" -->
+            <div class="nameContainer">
+                <div class="formControl">
+                    <label for="name">Shop Name</label>
+                    <input type="text" name="shop[name]" id="name" value="<%= shop.name %> ">
+                    <i class="fas fa-check-circle icon nameIconsEdit"></i>
+                    <i class="fas fa-exclamation-circle icon nameIconsEdit"></i>
+                    <small>Error Message</small>
+                </div>
+            </div>
+            <div class="infoContainer">
+                <div class="shopLocation formControl">
+                    <label for="location">Location</label>
+                    <input type="text" name="shop[location]" id="location" value="<%= shop.location %> ">
+                    <i class="fas fa-check-circle icon nameIconsEdit"></i>
+                    <i class="fas fa-exclamation-circle icon nameIconsEdit"></i>
+                    <small>Error Message</small>
+                </div>
+                <div class="shopNumber formControl">
+                    <!-- FROM OG: make type=tel   ...attempting now -->
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="shop[phone]" value="<%= shop.phone%> ">
+                    <i class="fas fa-check-circle icon nameIconsEdit"></i>
+                    <i class="fas fa-exclamation-circle icon nameIconsEdit"></i>
+                    <small>Error Message</small>
+                </div>
+                <div class="shopHours formControl">
+                    <label for="hours">Hours</label>
+                    <input type="text" name="shop[hours]" id="hours" value="<%= shop.hours %> ">
+                    <i class="fas fa-check-circle icon nameIconsEdit"></i>
+                    <i class="fas fa-exclamation-circle icon nameIconsEdit"></i>
+                    <small>Error Message</small>
+                </div>
+                <!-- not using form control here? because it's not client-side validated? -->
+                <div class="shopLink">
+                    <label for="link">Link to webpage</label>
+                    <input type="text" id="link" name="shop[link]" value="<%= shop.link %> ">
+                    <!-- are these necessary if I'm not validating? -->
+                    <i class="fas fa-check-circle icon nameIconsEdit"></i>
+                    <i class="fas fa-exclamation-circle icon nameIconsEdit"></i>
+                    <small>Error Message</small>
+                    <!-- we will see -->
+                </div>
+            </div>
+            <div class="detailsContainer">
+                <div class="shopDescription">
+                    <label for="description">Description</label>
+                    <textarea name="shop[description]" id="description" rows="10"><%= shop.description %> </textarea>
+                </div>
+                <div>
+                    <label for="dropDiv">Image(s)</label>
+                    <div class="shopImage dropZone" id="dropDiv">
+                        <!-- <label for="myFile">Images</label> -->
+                        <span class="dropZonePrompt">Drop file here or click to upload</span>
+                        <input type="file" name="shop[image]" class="dropZoneInput" id="myFile">
+                        <!-- FROM OG: I did not enter a value to image, perhaps it's covered later? -->
+                    </div>
+                </div>
+                <div class="shopFeatures">
+                    <div id="featureLabel">
+                        <label for="">Features</label>
+                        <!-- FROM OG: Not sure what to add for values here? I already have them in place? -->
+                    </div>
+                    <div class="optionContainer" id="option1">
+                        <input type="checkbox" id="gaming" name="shop[features]" value="gaming">
+                        <label for="gaming">Open gaming</label>
+                    </div>
+                    <div class="optionContainer" id="option2">
+                        <input type="checkbox" id="trade" name="shop[features]" value="trade">
+                        <label for="trade">Trade-ins</label>
+                    </div>
+                    <div class="optionContainer" id="option3">
+                        <input type="checkbox" id="events" name="shop[features]" value="events">
+                        <label for="events">In-store events</label>
+                    </div>
+                    <div class="optionContainer" id="option4">
+                        <input type="checkbox" id="tournaments" name="shop[features]" value="tournaments">
+                        <label for="tournaments">CCG tournaments</label>
+                    </div>
+                    <div class="optionContainer" id="option5">
+                        <input type="checkbox" id="membership" name="shop[features]" value="membership">
+                        <label for="membership">Membership program</label>
+                    </div>
+                    <div class="optionContainer" id="option6">
+                        <input type="checkbox" id="food" name="shop[features]" value="food">
+                        <label for="food">Food/drinks allowed</label>
+                    </div>
+                </div>
+            </div>
+            <div class="btnContainer">
+                <button class="submitBtn">Update Shop</button>
+            </div>
+        </form>
+    </section>
+    <div class="backBtn">
+        <a href="/shops/<%= shop._id %>">Back to Shop</a>
+    </div>
