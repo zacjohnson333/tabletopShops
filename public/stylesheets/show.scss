@@ -1,0 +1,161 @@
+// Variables
+$form-background: white;
+$font: 'Raleway', sans-serif;
+$font2: 'Eagle Lake', cursive;
+$color: #283044;
+$color2: #78A1BB;
+$btn: #283044;
+$btnText: #78A1BB;
+$btnTextHov: #EBF5EE;
+$left-margin: 10px;
+$right-margin: 10px;
+$delete: rgb(214, 0, 0);
+
+
+h1 {
+    font-family: $font2;
+}
+
+#showContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1f; // <-- different from OG but corrected?
+    padding: 30px;
+    column-gap: 20px;
+
+    #detailsContainer {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 5fr 0.5fr 1fr 0.5fr 1fr 0.5fr;
+        background-color: $form-background;
+        border-radius: 8px;
+        font-family: $font;
+        color: $color;
+
+        #img {
+            grid-column: 1/2;
+            grid-row: 1/2;
+            background-size: cover;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 75%, transparent 100%);
+        }
+
+        #location {
+            grid-column: 1/2;
+            grid-row: 2/3;
+            margin-left: $left-margin;
+            margin-right: $right-margin;
+        }
+
+        #description {
+            grid-column: 1/2;
+            grid-row: 3/4;
+            margin-left: $left-margin;
+            margin-right: $right-margin;
+        }
+
+        #phoneHours {
+            grid-column: 1/2;
+            grid-row: 4/5;
+            margin-left: $left-margin;
+            margin-right: $right-margin;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 1fr;
+
+            #phone {
+                grid-column: 1/2;
+                grid-row: 1/2;
+            }
+
+            #hours {
+                grid-column: 2/3;
+                grid-row: 1/2;
+            }
+        }
+
+        #features {
+            grid-column: 1/2;
+            grid-row: 5/6;
+            margin-left: $left-margin;
+            margin-right: $right-margin;
+        }
+
+        #link {
+            grid-column: 1/2;
+            grid-row: 6/7;
+            margin-left: $left-margin;
+            margin-right: $right-margin;
+            padding-top: 5px;
+        }
+
+        a,
+        a:visited {
+            text-decoration: none;
+            transition: all 0.2s ease;
+
+            &:hover {
+                color: $color2;
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    #mapReviewContainer {
+        grid-column: 2/3;
+        grid-row: 1/2;
+
+        #mapContainer {}
+
+        #reviewContainer {}
+    }
+}
+
+#btnContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    grid-template-rows: 1fr;
+    // column-gap: 20px;
+    padding-bottom: 1.5rem;
+    padding-left: 30px;
+
+    button {
+        background-color: $btn;
+        color: $btnText;
+        transition: all 0.2s ease;
+        padding: 0.5rem;
+        border-radius: 8px;
+        border: none;
+
+        &:hover {
+            color: $btnTextHov;
+            transform: translateY(-3px);
+
+        }
+    }
+
+    #editBtn {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    #deleteBtn {
+        grid-column: 2/3;
+        grid-row: 1/2;
+
+        button {
+            &:hover {
+                background-color: $delete;
+            }
+        }
+    }
+
+}
+
+.borderBottom {
+    border-bottom: solid 1px grey;
+    padding-bottom: 15px;
+}

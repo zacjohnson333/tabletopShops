@@ -1,0 +1,123 @@
+h1 {
+  font-family: "Eagle Lake", cursive;
+}
+
+#showContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1f;
+  padding: 30px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+#showContainer #detailsContainer {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 5fr 0.5fr 1fr 0.5fr 1fr 0.5fr;
+  background-color: white;
+  border-radius: 8px;
+  font-family: "Raleway", sans-serif;
+  color: #283044;
+}
+#showContainer #detailsContainer #img {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  background-size: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  -webkit-mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 75%, transparent 100%);
+          mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 75%, transparent 100%);
+}
+#showContainer #detailsContainer #location {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+#showContainer #detailsContainer #description {
+  grid-column: 1/2;
+  grid-row: 3/4;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+#showContainer #detailsContainer #phoneHours {
+  grid-column: 1/2;
+  grid-row: 4/5;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+}
+#showContainer #detailsContainer #phoneHours #phone {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+#showContainer #detailsContainer #phoneHours #hours {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+#showContainer #detailsContainer #features {
+  grid-column: 1/2;
+  grid-row: 5/6;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+#showContainer #detailsContainer #link {
+  grid-column: 1/2;
+  grid-row: 6/7;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-top: 5px;
+}
+#showContainer #detailsContainer a,
+#showContainer #detailsContainer a:visited {
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+#showContainer #detailsContainer a:hover,
+#showContainer #detailsContainer a:visited:hover {
+  color: #78A1BB;
+  font-size: 1.5rem;
+}
+#showContainer #mapReviewContainer {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+#btnContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 200px);
+  grid-template-rows: 1fr;
+  padding-bottom: 1.5rem;
+  padding-left: 30px;
+}
+#btnContainer button {
+  background-color: #283044;
+  color: #78A1BB;
+  transition: all 0.2s ease;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: none;
+}
+#btnContainer button:hover {
+  color: #EBF5EE;
+  transform: translateY(-3px);
+}
+#btnContainer #editBtn {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+#btnContainer #deleteBtn {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+#btnContainer #deleteBtn button:hover {
+  background-color: rgb(214, 0, 0);
+}
+
+.borderBottom {
+  border-bottom: solid 1px grey;
+  padding-bottom: 15px;
+}/*# sourceMappingURL=show.css.map */
